@@ -1,9 +1,9 @@
 html
     {
         margin: 0;
-        background-image: url("background.jpg");
+        /* background-image: url("background.jpg");
         background-size: cover;
-        background-position: bottom;
+        background-position: bottom; */
         height: 100%;
     }
 body    
