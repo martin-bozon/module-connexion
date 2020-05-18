@@ -1,4 +1,35 @@
 <!DOCTYPE html>
+<?php
+    if(isset($_POST["valiconn"]))
+        {
+            $login = $_POST["login"];
+            $mdp = $_POST["password"];
+            $connexionbd = mysqli_connect("localhost" , "root" , "" , "moduleconnexion");
+            $verifmdp = "SELECT password FROM utilisateurs WHERE login = '$login'";
+            $envoieverifmdp = mysqli_query($connexionbd , $verifmdp);
+            $resultatverifmdp = mysqli_fetch_all($envoieverifmdp, MYSQLI_ASSOC);
+            
+            if(!empty($resultatverifmdp))
+                {
+                    
+                    if(password_verify($mdp , $resultatverifmdp[0]["password"]))
+                    {
+                        //crée une session
+                        header("Location:index.php");
+                    }
+                else
+                    {
+                        $msgerreur =  "mdp différents";
+                    }
+                }
+            else
+                {
+                    $msgerreur = "Ce login n'existe pas";
+                }
+        
+        }
+
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -16,12 +47,24 @@
     </header>
 
     <main>
-        <form action="index.php" method="POST">
+        <form action="connexion.php" method="POST">
             <label for="login">Login :</label>
             <input type="text" id="connlog" name="login" required/>
             <label for="password">Mot de passe :</label>
             <input type="password" id="connmdp" name="password" required/>
-            <input type="submit" name="valinsc" value="Connexion"/>
+            <input type="submit" name="valiconn" value="Connexion"/>
+                <?php
+                    if(isset($msgerreur))
+                        {
+                ?>
+                    <p class="msgrerreur">  
+                <?php
+                            echo $msgerreur;
+                ?>
+                    </p>
+                <?php          
+                        }
+                ?>
         </form>
     </main>
 

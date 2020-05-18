@@ -65,7 +65,7 @@ if(isset($_POST["valinsc"]))
                     if(isset($msgerreur))
                         {
                 ?>
-                    <p id="msgerreur">
+                    <p class="msgerreur">
                 <?php
                     echo $msgerreur;
                 ?>
