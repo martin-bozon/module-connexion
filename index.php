@@ -17,7 +17,11 @@
     </header>
 
     <main>
-        <h1>Bonjour ... bienvuenue sur mon site !</h1>
+        <section>
+            <h1>Bienvuenue sur mon site !</h1>
+            <h3>Rejoins nous vite !</h3>
+        </section>
+       
     </main>
 
     <footer>

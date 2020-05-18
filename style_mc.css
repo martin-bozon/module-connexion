@@ -1,0 +1,78 @@
+html
+    {
+        margin: 0;
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: ;
+    }
+body    
+    {
+        margin: 0;
+    }
+a
+    {
+        text-decoration: none;
+        color: black;
+    }
+a:hover
+    {
+        color: white;
+    }
+header
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: rgba(238, 39, 218, 0.507);
+    }
+#Hgauche
+    {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 3;
+        padding-left: 5vw;
+    }
+#Hdroite
+    {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 2;
+        justify-content: space-evenly;
+    }
+main
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+main section
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(16, 161, 16, 0.562);
+        backdrop-filter: blur(4px);
+        height: 40vh;
+        width: 25vw;
+        
+    }
+form
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 10vh;
+        height: 60vh;
+        width: 25vw;
+        background-color: crimson;
+        align-items: center;
+    }
+footer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: rgba(238, 39, 218, 0.507);
+    }
