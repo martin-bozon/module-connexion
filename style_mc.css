@@ -74,9 +74,32 @@ form
         backdrop-filter: blur(4px);
         align-items: center;
     }
-#tableau_users
+table
     {
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-spacing: 0;
+        background-color: white;
+        width: 80vw;;
+        text-align: center;
+    }
+thead
+    {
+        background-color: gray;
         border: 1px solid black;
+    }
+th
+    {
+        border-left: 1px solid black;
+    }
+td  
+    {
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+td:nth-child(2)
+    {
+        color: red;
     }
 footer
     {
