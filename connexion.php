@@ -5,21 +5,21 @@
             $login = $_POST["login"];
             $mdp = $_POST["password"];
             $connexionbd = mysqli_connect("localhost" , "root" , "" , "moduleconnexion");
-            $verifmdp = "SELECT password FROM utilisateurs WHERE login = '$login'";
+            $verifmdp = "SELECT * FROM utilisateurs WHERE login = '$login'";
             $envoieverifmdp = mysqli_query($connexionbd , $verifmdp);
             $resultatverifmdp = mysqli_fetch_all($envoieverifmdp, MYSQLI_ASSOC);
-            
+            var_dump($resultatverifmdp);
             if(!empty($resultatverifmdp))
-                {
-                    
+                { 
                     if(password_verify($mdp , $resultatverifmdp[0]["password"]))
                     {
-                        //crée une session
+                        session_start();
+                        $_SESSION["login"] = $resultatverifmdp[0]["login"];
                         header("Location:index.php");
                     }
                 else
                     {
-                        $msgerreur =  "mdp différents";
+                        $msgerreur =  "Mauvais mot de passe";
                     }
                 }
             else
@@ -28,7 +28,6 @@
                 }
         
         }
-
 ?>
 <html>
 <head>

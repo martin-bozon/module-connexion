@@ -17,8 +17,9 @@
 
     <main>
         <form action="profil.php" method="POST">
+        <!-- ajouter php pour info profil -->
             <label for="login">Login :</label>
-            <input type="text" id="insclog" name="login"/>
+            <input type="text" id="insclog" name="login"/> 
             <label for="prenom">Prénom :</label>
             <input type="text" id="inscpre" name="prenom"/>
             <label for="nom">Nom :</label>
