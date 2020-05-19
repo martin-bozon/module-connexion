@@ -74,6 +74,10 @@ form
         backdrop-filter: blur(4px);
         align-items: center;
     }
+#tableau_users
+    {
+        border: 1px solid black;
+    }
 footer
     {
         display: flex;

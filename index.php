@@ -1,5 +1,4 @@
-=
-=<?php session_start();?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +14,8 @@
         <section id="Hdroite">
             <h2><a href="inscription.php">Inscription</a></h2>
             <h2><a href="connexion.php">Connexion</a></h2>
-            <h2><a href="profil.php">Prof
-
-            </a></h2>
-            <h2><a href="connexion.php">Connexion</a></h2>
+            <h2><a href="profil.php">Profil</a>
+            <h2><a href="admin.php">Admin</a></h2>
         </section>
     </header>
 
