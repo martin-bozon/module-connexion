@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+    //requête à faire sous conditions
+    $connexionbd = mysqli_connect("localhost" , "root" , "" , "moduleconnexion");
+    $requeteinfo = "SELECT * FROM utilisateurs WHERE login = '$_POST[login]'"; //requete a vérifier
+    $query = mysqli_query($connexionbd , $requeteinfo);
+    $info_users = mysqli_fetch_all($query , MYSQLI_ASSOC);
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -19,7 +27,7 @@
         <form action="profil.php" method="POST">
         <!-- ajouter php pour info profil -->
             <label for="login">Login :</label>
-            <input type="text" id="insclog" name="login"/> 
+            <input type="text" id="insclog" name="login" value=""/> 
             <label for="prenom">Prénom :</label>
             <input type="text" id="inscpre" name="prenom"/>
             <label for="nom">Nom :</label>
