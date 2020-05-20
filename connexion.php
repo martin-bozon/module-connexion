@@ -20,7 +20,8 @@
                     {
                         session_start();
                         $_SESSION["login"] = $resultatverifmdp[0]["login"];
-                        header("Location:index.php");
+                        $_SESSION["id"] = $resultatverifmdp[0]["id"];
+                       header("Location:index.php");
                     }
                 else
                     {

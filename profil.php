@@ -19,10 +19,10 @@
                 if(isset($_SESSION["login"]))
                     {
                         $connexionbd = mysqli_connect("localhost" , "root" , "" , "moduleconnexion");
-                        $requeteinfo = "SELECT * FROM utilisateurs WHERE login = '$_SESSION[login]'"; //requete a vérifier
+                        $requeteinfo = "SELECT * FROM utilisateurs WHERE login = '$_SESSION[login]'"; 
                         $query = mysqli_query($connexionbd , $requeteinfo);
                         $info_users = mysqli_fetch_all($query, MYSQLI_ASSOC);
-                        
+
                         if($_SESSION["login"] == "admin")
                             {
             ?>
@@ -38,8 +38,13 @@
                                     </section>
                                 </header>
             <?php
+                                if(isset($_POST["valimodif"]))
+                                    {
+                                        $requeteupadate = "UPDATE login prenom nom password SET '$_POST[login]' , '$_POST[prenom]' , '$_POST[nom]' , '$_POST[password]' WHERE id = '$_SESSION[id]'";
+                                        $queryupdate = mysqli_query($connexionbd , $requeteupadate);
+                                    }
                             }
-                        else
+                        else if($_SESSION["login"] != "admin")
                             {
             ?>
                                 <header>
@@ -53,6 +58,11 @@
                                     </section>
                                 </header>
             <?php
+                                 if(isset($_POST["valimodif"]))
+                                    {
+                                        $requeteupadate = "UPDATE login prenom nom password SET '$_POST[login]' , '$_POST[prenom]' , '$_POST[nom]' , '$_POST[password]' WHERE id = '$_SESSION[id]'";
+                                        $queryupdate = mysqli_query($connexionbd , $requeteupadate);
+                                    }
                             }
             ?>
         <main>
@@ -64,11 +74,12 @@
                 <input type="text" id="inscpre" name="prenom" value="<?php echo $info_users[0]['prenom'];?>"/>
                 <label for="nom">Nom :</label>
                 <input type="text" id="inscnom" name="nom" value="<?php echo $info_users[0]['nom'];?>"/>
+               <!-- Rajouter ancien mdp -->
                 <label for="password">Mot de passe</label>
                 <input type="password" id="inscmdp" name="password"/>
                 <label for="passwordconf">Confirmation Mot de passe</label>
-                <input type="password" id="inscconfirm" name="passwordconf"/>
-                <input type="submit" name="valinsc" value="Modifier"/>
+                <input type="password" id="modifconfirm" name="passwordconf"/>
+                <input type="submit" name="valimodif" value="Modifier"/>
             </form>
         </main>
 
