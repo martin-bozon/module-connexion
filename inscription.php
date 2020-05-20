@@ -1,6 +1,11 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <?php
-if(isset($_POST["valinsc"]))
+ if(isset($_SESSION["login"]))
+ {
+     header("Location:index.php");
+ }
+else if(isset($_POST["valinsc"]))
     {
         $login = $_POST["login"];
         $prenom = $_POST["prenom"];
@@ -49,6 +54,7 @@ if(isset($_POST["valinsc"]))
     </header>
 
     <main>
+        <h1>Formulaire d'inscription</h1>
         <form action="inscription.php" method="POST">
             <label for="login">Login :</label>
             <input type="text" id="insclog" name="login" required/>
