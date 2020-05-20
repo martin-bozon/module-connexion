@@ -63,7 +63,7 @@ main section
         flex-grow: 0.4;
         width: 25vw;
     }
-form
+.formIC
     {
         display: flex;
         flex-direction: column;

@@ -55,7 +55,7 @@ else if(isset($_POST["valinsc"]))
 
     <main>
         <h1>Formulaire d'inscription</h1>
-        <form action="inscription.php" method="POST">
+        <form action="inscription.php" method="POST" class="formIC">
             <label for="login">Login :</label>
             <input type="text" id="insclog" name="login" required/>
             <label for="prenom">Prénom :</label>

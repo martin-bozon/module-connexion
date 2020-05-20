@@ -52,7 +52,7 @@
 
     <main>
         <h1>Formulaire de Connexion</h1>
-        <form action="connexion.php" method="POST">
+        <form action="connexion.php" method="POST" class="formIC">
             <label for="login">Login :</label>
             <input type="text" id="connlog" name="login" required/>
             <label for="password">Mot de passe :</label>
