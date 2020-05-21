@@ -13,20 +13,20 @@
             $verifmdp = "SELECT * FROM utilisateurs WHERE login = '$login'";
             $envoieverifmdp = mysqli_query($connexionbd , $verifmdp);
             $resultatverifmdp = mysqli_fetch_all($envoieverifmdp, MYSQLI_ASSOC);
-            var_dump($resultatverifmdp);
             if(!empty($resultatverifmdp))
                 { 
                     if(password_verify($mdp , $resultatverifmdp[0]["password"]))
-                    {
-                        session_start();
-                        $_SESSION["login"] = $resultatverifmdp[0]["login"];
-                        $_SESSION["id"] = $resultatverifmdp[0]["id"];
-                       header("Location:index.php");
-                    }
-                else
-                    {
-                        $msgerreur =  "Mauvais mot de passe";
-                    }
+                        {
+                            session_start();
+                            $_SESSION["login"] = $resultatverifmdp[0]["login"];
+                            $_SESSION["id"] = $resultatverifmdp[0]["id"];
+                            $_SESSION["password"] = $resultatverifmdp[0]["password"];
+                        header("Location:index.php");
+                        }
+                    else
+                        {
+                            $msgerreur =  "Mauvais mot de passe";
+                        }
                 }
             else
                 {
