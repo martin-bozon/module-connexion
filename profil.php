@@ -16,8 +16,7 @@
     <body>
             <?php                    
                 if(isset($_SESSION["login"]))
-                    {
-                       
+                    {                       
                         $connexionbd = mysqli_connect("localhost" , "root" , "" , "moduleconnexion");
                         $requeteinfo = "SELECT * FROM utilisateurs WHERE login = '$_SESSION[login]'"; //requete pour afficher les infos dans le form                        
                         $query = mysqli_query($connexionbd , $requeteinfo);
@@ -77,8 +76,8 @@
                                         <h2><a href="index.php">Accueil</a></h2>
                                     </section>
                                     <section id="Hdroite">
-                                        <h2><a href="admin.php">Admin</a>
-                                        <form action="" method="POST">
+                                        <h2><a href="admin.php">Admin</a></h2>
+                                        <form action="" method="POST" class="deco">
                                             <input type="submit" name="deco" value="Déconnexion"/>
                                         </form>
                                     </section>
@@ -93,7 +92,7 @@
                                         <h2><a href="index.php">Accueil</a></h2>
                                     </section>
                                     <section id="Hdroite">
-                                        <form action="" method="POST">
+                                        <form action="" method="POST" class="deco">
                                             <input type="submit" name="deco" value="Déconnexion"/>
                                         </form>
                                     </section>

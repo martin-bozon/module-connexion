@@ -27,9 +27,9 @@ if(isset($_POST["deco"]))
                                 <h2><a href="index.php">Accueil</a></h2>
                             </section>
                             <section id="Hdroite">
-                                <h2><a href="profil.php">Profil</a>
-                                <h2><a href="admin.php">Admin</a>
-                                <form action="" method="POST">
+                                <h2><a href="profil.php">Profil</a></h2>
+                                <h2><a href="admin.php">Admin</a></h2>
+                                <form action="" method="POST" class="deco">
                                     <input type="submit" name="deco" value="Déconnexion"/>
                                 </form>
                             </section>
@@ -51,8 +51,8 @@ if(isset($_POST["deco"]))
                                 <h2><a href="index.php">Accueil</a></h2>
                             </section>
                             <section id="Hdroite">
-                                <h2><a href="profil.php">Profil</a>
-                                <form action="" method="POST">
+                                <h2><a href="profil.php">Profil</a></h2>
+                                <form action="" method="POST" class="deco">
                                     <input type="submit" name="deco" value="Déconnexion"/>
                                 </form>
                             </section>

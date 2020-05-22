@@ -1,9 +1,9 @@
 html
     {
         margin: 0;
-        /* background-image: url("background.jpg");
+        background-image: url("background.jpg");
         background-size: cover;
-        background-position: bottom; */
+        background-position: bottom;
         height: 100%;
     }
 body    
@@ -44,6 +44,11 @@ header
         flex-grow: 2;
         justify-content: space-evenly;
     }
+.deco
+    {
+        display: flex;
+        align-items: center;
+    }
 main
     {
         display: flex;
@@ -73,6 +78,10 @@ main section
         background-color: rgba(16, 161, 16, 0.562);
         backdrop-filter: blur(4px);
         align-items: center;
+    }
+input
+    {
+        text-align: center;
     }
 table
     {
